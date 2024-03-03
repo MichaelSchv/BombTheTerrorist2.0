@@ -1,0 +1,17 @@
+<resources>
+    <string name="bomb_the_terrorist">Bomb The Terrorist</string>
+    <string name="sensor_mode">Sensor Mode</string>
+    <string name="button_mode">Button Mode</string>
+    <string name="slow">Slow</string>
+    <string name="fast">Fast</string>
+    <string name="play">Play</string>
+    <string name="scores">Scores</string>
+    <string name="buttons">Buttons</string>
+    <string name="sensors">Sensors</string>
+    <string name="score">Score:0</string>
+    <string name="top_10_scores">Top 10 Scores</string>
+    <string name="_1">1# :</string>
+    <string name="_1000">1000</string>
+    <string name="show">Show</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>

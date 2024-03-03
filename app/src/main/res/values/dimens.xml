@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="menu_TITLE_textSize">40sp</dimen>
+    <dimen name="padding_switch">5dp</dimen>
+    <dimen name="textSize">14sp</dimen>
+    <dimen name="height_main_obstacles">45dp</dimen>
+    <dimen name="textSizeScore">30sp</dimen>
+    <dimen name="data_elevation">8dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+</resources>

@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream"
+    tools:context=".UI_Controller.MainActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/score"
+        android:textSize="@dimen/textSizeScore"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_LLC_lives"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_life0"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/heart"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_life1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/heart"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/main_IMG_life2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/heart"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <TableLayout
+        android:id="@+id/main_TBL_matrix"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_LLC_arrows"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:layout_below="@id/main_LLC_lives"
+        android:layout_marginTop="@dimen/margin_default"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell00"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell01"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell02"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell03"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell04"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell10"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell11"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell12"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell13"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell14"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell20"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell21"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell22"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell23"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell24"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell30"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell31"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell32"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell33"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell34"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell40"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell41"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell42"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell43"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell44"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell50"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell51"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell52"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell53"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell54"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell60"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell61"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell62"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell63"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell64"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell70"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell71"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell72"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell73"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell74"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell80"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell81"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell82"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell83"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell84"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell90"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell91"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell92"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell93"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_cell94"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_main_obstacles"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/temp_for_obstacles"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_toonCell0"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/rocket"
+                android:visibility="invisible"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_toonCell1"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/rocket"
+                android:visibility="invisible"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_toonCell2"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/rocket"
+                android:visibility="visible"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_toonCell3"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/rocket"
+                android:visibility="invisible"/>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_toonCell4"
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/rocket"
+                android:visibility="invisible"/>
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_LLC_arrows"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="@dimen/margin_default"
+        android:layout_marginBottom="32dp">
+
+        <ImageButton
+            android:id="@+id/main_BTN_left"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/left_arrow"
+            />
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="0dp"/>
+
+        <ImageButton
+            android:id="@+id/main_BTN_right"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/right_arrow"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</RelativeLayout>
